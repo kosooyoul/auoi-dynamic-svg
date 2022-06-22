@@ -9,7 +9,7 @@ This is backend project that creates svg dynamically with reference to backend d
 
 ### Date
 
-<img alt="age" src="https://dsvg.auoi.net/svg/data"/>
+<img alt="age" src="https://dsvg.auoi.net/svg/date"/>
 
 ### Age
 * y : year
