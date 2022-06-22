@@ -29,6 +29,7 @@ async function getController(req, res, next) {
 		const result = await operation(context, params);
 		// res.header("content-type", "image/svg+xml");
 		res.setHeader('Content-Type', 'image/svg+xml');
+		res.setHeader('Cache-Control', 'public, max-age=0');
 		res.send(result);
 
 		console.log(new Date(), "App." + appName + " call Operation." + NAME + "." + operationName + ", Responsed: " + JSON.stringify({"code": result.code, "message": result.message, "success": result.success}));
