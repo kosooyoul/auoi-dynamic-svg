@@ -5,7 +5,7 @@ var operations = {
 	'echo': async function(context, params) {
 		return [
 			'<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 200 40" role="img">',
-			'<rect width="198" height="38" x="1" y="1" rx="8" ry="8" style="fill: rgba(100, 0, 80, 0.6); stroke-width: 0.5; stroke: rgb(100, 0, 100)" />',
+			'<rect width="198" height="38" x="1" y="1" rx="8" ry="8" style="fill: rgba(0, 100, 80, 0.8); stroke-width: 0.5; stroke: rgb(0, 100, 100)" />',
 			'<text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" dominant-baseline="central" font-size="22" fill="white">',
 			String(params.echo).toUpperCase(),
 			'</text>',
@@ -15,7 +15,7 @@ var operations = {
 	'date': async function(context, params) {
 		return [
 			'<svg xmlns="http://www.w3.org/2000/svg" width="360" height="20" viewBox="0 0 720 40" role="img">',
-			'<rect width="718" height="38" x="1" y="1" rx="8" ry="8" style="fill: rgba(100, 0, 80, 0.6); stroke-width: 0.5; stroke: rgb(100, 0, 100)" />',
+			'<rect width="718" height="38" x="1" y="1" rx="8" ry="8" style="fill: rgba(0, 80, 100, 0.8); stroke-width: 0.5; stroke: rgb(0, 100, 100)" />',
 			'<text x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" dominant-baseline="central" font-size="22" fill="white">',
 			new Date(),
 			'</text>',
