@@ -5,7 +5,7 @@ This is backend project that creates svg dynamically with reference to backend d
 ### Echo
 * echo : echo text
 
-<img alt="echo" src="https://dsvg.auoi.net/svg/echo?echo=test"/>
+<img alt="echo" src="https://dsvg.auoi.net/svg/echo?echo=hello%20world"/>
 
 ### Date
 
