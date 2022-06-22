@@ -5,15 +5,15 @@ This is backend project that creates svg dynamically with reference to backend d
 ### Echo
 * echo : echo text
 
-<img alt="age" src="https://dsvg.auoi.net/svg/echo?echo=test"/>
+<img alt="echo" src="https://dsvg.auoi.net/svg/echo?echo=test"/>
 
 ### Date
 
-<img alt="age" src="https://dsvg.auoi.net/svg/date"/>
+<img alt="date" src="https://dsvg.auoi.net/svg/date?nop"/>
 
 ### Age
 * y : year
 * m : month
 * d : date of month
 
-<img alt="age" src="https://dsvg.auoi.net/svg/age?y=2000&m=1&d=1"/>
+<img alt="age" src="https://dsvg.auoi.net/svg/age?y=2008&m=2&d=8"/>
