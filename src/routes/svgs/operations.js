@@ -93,14 +93,14 @@ var operations = {
 
 		return {
 			"svg": [
-				'<svg xmlns="http://www.w3.org/2000/svg" width="600" height="' + svgHeight + '" viewBox="0 0 1200 ' + (svgHeight * 2) + '" role="img">',
+				'<svg xmlns="http://www.w3.org/2000/svg" width="400" height="' + svgHeight + '" viewBox="0 0 800 ' + (svgHeight * 2) + '" role="img">',
 				...repos.map((repo, i) => [
 					'<a href="' + repo.html_url + '">',
-					'<rect width="1198" height="38" x="1" y="' + (i * 40 + 1) + '" rx="8" ry="8" style="fill: ' + (repo.highlight ? 'rgb(80, 160, 0)' : 'rgb(140, 140, 140)') + '"/>',
+					'<rect width="798" height="38" x="1" y="' + (i * 40 + 1) + '" rx="8" ry="8" style="fill: ' + (repo.highlight ? 'rgb(120, 160, 0)' : 'rgb(140, 140, 140)') + '"/>',
 					'<text x="12" y="' + (i * 40 + 20) + '" text-anchor="start" alignment-baseline="middle" dominant-baseline="central" font-size="22" fill="white">',
-					(repo.love ? "🧡" : "") + " " + repo.name + " - " + (repo.description || "todo"),
+					(repo.love ? "🧡" : "") + " " + repo.name + " - " + (repo.description || "").substr(0, 20),
 					'</text>',
-					'<text x="1188" y="' + (i * 40 + 20) + '" text-anchor="end" alignment-baseline="middle" dominant-baseline="central" font-size="22" fill="white">',
+					'<text x="788" y="' + (i * 40 + 20) + '" text-anchor="end" alignment-baseline="middle" dominant-baseline="central" font-size="22" fill="white">',
 					repo.language || "",
 					'</text>',
 					'</a>',
