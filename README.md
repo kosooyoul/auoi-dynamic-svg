@@ -1,4 +1,4 @@
-# Dynamic SVG
+# Auoi Dynamic SVG
 This is backend project that creates svg dynamically with reference to backend data.
 
 ## Practices
@@ -36,4 +36,18 @@ query string params
 - d : date of month of birthdate
 -->
 <img alt="age" src="https://dsvg.auoi.net/svg/age?y=2008&m=2&d=8"/>
+```
+
+
+### Github repositories
+<img alt="github-repos" src="https://dsvg.auoi.net/svg/github-repos?highlights=javascript,typescript,go&loves=auoi,study"/>
+
+#### usage
+```
+<!--
+query string params
+- highlights : highlight items by language names
+- loves : add heart emoji to items by keywords to search repository name
+-->
+<img alt="github-repos" src="https://dsvg.auoi.net/svg/github-repos?highlights=javascript,typescript,go&loves=auoi,study"/>
 ```
