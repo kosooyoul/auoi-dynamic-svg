@@ -12,11 +12,11 @@ async function getController(req, res, next) {
 	const operationName = req.params.operationName;
 	const operation = operations[operationName];
 	if (!operation) {
-		return res.json({"success": false, "code": codes.NOT_FOUND, "message": "not found operation"});
+		return res.json({ "success": false, "code": codes.NOT_FOUND, "message": "not found operation" });
 	}
 
 	const context = req.context;
-	context.ip = req.headers["x-forwarded-for"] ||  req.connection.remoteAddress;
+	context.ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
 	context.userAgent = req.get("user-agent");
 	context.request = req;
 	context.response = res;
@@ -29,12 +29,12 @@ async function getController(req, res, next) {
 		const result = await operation(context, params);
 		// res.header("content-type", "image/svg+xml");
 		res.setHeader('Content-Type', 'image/svg+xml');
-		res.setHeader('Cache-Control', 'public, max-age=0');
-		res.send(result);
+		res.setHeader('Cache-Control', 'public, max-age=' + (result.maxAge || 0));
+		res.send(result.svg);
 
-		console.log(new Date(), "App." + appName + " call Operation." + NAME + "." + operationName + ", Responsed: " + JSON.stringify({"code": result.code, "message": result.message, "success": result.success}));
+		console.log(new Date(), "App." + appName + " call Operation." + NAME + "." + operationName + ", Responsed: " + JSON.stringify({ "code": result.code, "message": result.message, "success": result.success }));
 	} catch (e) {
-		res.json({"success": false, "code": codes.UNKNOWN_ERROR, "message": "error"});
+		res.json({ "success": false, "code": codes.UNKNOWN_ERROR, "message": "error" });
 
 		console.log(new Date(), "App." + appName + " call Operation." + NAME + "." + operationName + ", Error: " + e.message);
 	}
@@ -42,13 +42,13 @@ async function getController(req, res, next) {
 }
 
 // Get Operation 1
-router.get("/:name1", async function(req, res, next) {
+router.get("/:name1", async function (req, res, next) {
 	req.params.operationName = req.params.name1;
 	await getController(req, res, next);
 });
 
 // Get Operation 2
-router.get("/:name1/:name2", async function(req, res, next) {
+router.get("/:name1/:name2", async function (req, res, next) {
 	req.params.operationName = req.params.name1 + "/" + req.params.name2;
 	await getController(req, res, next);
 });
